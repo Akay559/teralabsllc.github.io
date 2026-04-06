@@ -3,58 +3,50 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="TYM — Track Your Money. The privacy-first budgeting app for iPhone. No account required. No bank sync. 100% on-device. Free to start."/>
+  <meta name="description" content="TYM — Track Your Money. A privacy-first budgeting app for iPhone. No account required. No bank sync. All data stays on your device."/>
   <title>TYM — Track Your Money | Privacy-First Budgeting for iPhone</title>
   <style>
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior: smooth; }
-
     :root {
-      --bg:       #080B14;
-      --bg2:      #0D1117;
-      --bg3:      #111827;
-      --card:     rgba(255,255,255,0.03);
-      --border:   rgba(255,255,255,0.07);
-      --border2:  rgba(255,255,255,0.13);
-      --text:     #F8FAFC;
-      --muted:    rgba(248,250,252,0.48);
-      --dim:      rgba(248,250,252,0.25);
-      --teal:       #0D9488;
-      --teal-l:     #14B8A8;
-      --teal-dim:   rgba(13,148,136,0.12);
-      --teal-b:     rgba(13,148,136,0.28);
-      --r:  16px;
-      --rs: 10px;
+      --bg:      #080B14;
+      --bg2:     #0D1117;
+      --bg3:     #111827;
+      --card:    rgba(255,255,255,0.03);
+      --border:  rgba(255,255,255,0.07);
+      --border2: rgba(255,255,255,0.13);
+      --text:    #F8FAFC;
+      --muted:   rgba(248,250,252,0.48);
+      --dim:     rgba(248,250,252,0.25);
+      --teal:    #0D9488;
+      --teal-l:  #14B8A8;
+      --teal-d:  rgba(13,148,136,0.12);
+      --teal-b:  rgba(13,148,136,0.28);
+      --r: 16px;
     }
-
     body {
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
+      background: var(--bg); color: var(--text);
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
     }
-
     a { color: inherit; text-decoration: none; }
 
-    /* ── NAV ────────────────────────────────── */
+    /* NAV */
     nav {
       position: sticky; top: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
       padding: 0 40px; height: 64px;
-      background: rgba(8,11,20,0.88);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
+      background: rgba(8,11,20,0.9);
+      backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
       border-bottom: 1px solid var(--border);
     }
     .logo { display: flex; align-items: center; gap: 10px; }
     .logo-mark {
       width: 32px; height: 32px; background: var(--teal);
       border-radius: 8px; display: flex; align-items: center;
-      justify-content: center; font-size: 17px; font-weight: 900;
-      color: white; flex-shrink: 0;
+      justify-content: center; font-size: 17px; font-weight: 900; color: white;
     }
-    .logo-name { font-size: 15px; font-weight: 700; letter-spacing: -0.3px; }
+    .logo-name { font-size: 15px; font-weight: 700; }
     .logo-name span { color: var(--muted); font-weight: 400; }
     .nav-links { display: flex; align-items: center; gap: 28px; }
     .nav-links a { font-size: 14px; color: var(--muted); transition: color .2s; }
@@ -66,15 +58,14 @@
     }
     .nav-cta:hover { background: var(--teal-l) !important; }
 
-    /* ── HERO ────────────────────────────────── */
+    /* HERO */
     .hero {
-      text-align: center;
-      padding: 110px 24px 90px;
+      text-align: center; padding: 110px 24px 90px;
       max-width: 780px; margin: 0 auto;
     }
     .eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
-      background: var(--teal-dim); border: 1px solid var(--teal-b);
+      background: var(--teal-d); border: 1px solid var(--teal-b);
       color: var(--teal-l); font-size: 12px; font-weight: 600;
       letter-spacing: 0.5px; text-transform: uppercase;
       padding: 6px 14px; border-radius: 100px; margin-bottom: 28px;
@@ -84,20 +75,19 @@
       background: var(--teal-l); border-radius: 50%;
     }
     .hero h1 {
-      font-size: clamp(42px, 7vw, 68px);
+      font-size: clamp(40px, 7vw, 66px);
       font-weight: 800; letter-spacing: -2.5px;
-      line-height: 1.06; margin-bottom: 22px;
+      line-height: 1.07; margin-bottom: 22px;
     }
     .hero h1 em { font-style: normal; color: var(--teal-l); }
     .hero-sub {
-      font-size: clamp(16px, 2.2vw, 20px);
+      font-size: clamp(16px, 2vw, 19px);
       color: var(--muted); max-width: 560px;
       margin: 0 auto 44px; line-height: 1.65;
     }
     .hero-ctas {
       display: flex; gap: 12px;
-      justify-content: center; flex-wrap: wrap;
-      margin-bottom: 52px;
+      justify-content: center; flex-wrap: wrap; margin-bottom: 52px;
     }
     .btn-dl {
       display: inline-flex; align-items: center; gap: 8px;
@@ -129,11 +119,8 @@
       font-weight: 700; font-size: 12px;
     }
 
-    /* ── SECTIONS ────────────────────────────── */
-    .section {
-      max-width: 1040px; margin: 0 auto;
-      padding: 90px 24px;
-    }
+    /* SECTIONS */
+    .section { max-width: 1040px; margin: 0 auto; padding: 90px 24px; }
     .section-alt {
       background: var(--bg2);
       border-top: 1px solid var(--border);
@@ -143,78 +130,74 @@
     .section-alt .inner { max-width: 1040px; margin: 0 auto; }
     .sh { text-align: center; margin-bottom: 60px; }
     .sl {
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 1.5px; text-transform: uppercase;
-      color: var(--teal-l); margin-bottom: 14px;
+      font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--teal-l); margin-bottom: 14px;
     }
     .sh h2 {
-      font-size: clamp(30px, 4vw, 44px);
+      font-size: clamp(28px, 4vw, 44px);
       font-weight: 800; letter-spacing: -1.2px;
       line-height: 1.12; margin-bottom: 16px;
     }
     .sh p { font-size: 17px; color: var(--muted); max-width: 500px; margin: 0 auto; }
 
-    /* ── WHY TYM ─────────────────────────────── */
-    .diff-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
+    /* WHY TYM */
+    .diff-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
     .diff-card {
       background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--r); padding: 32px 28px;
-      transition: border-color .2s;
+      border-radius: var(--r); padding: 32px 28px; transition: border-color .2s;
     }
     .diff-card:hover { border-color: var(--border2); }
     .diff-icon {
-      width: 50px; height: 50px;
-      background: var(--teal-dim); border-radius: 13px;
-      display: flex; align-items: center;
-      justify-content: center; font-size: 24px;
-      margin-bottom: 20px;
+      width: 50px; height: 50px; background: var(--teal-d);
+      border-radius: 13px; display: flex; align-items: center;
+      justify-content: center; font-size: 24px; margin-bottom: 20px;
     }
-    .diff-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; letter-spacing: -.3px; }
+    .diff-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
     .diff-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
-    /* ── FEATURES GRID ───────────────────────── */
+    /* FEATURES */
     .feat-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: grid; grid-template-columns: repeat(3,1fr);
       gap: 1px; background: var(--border);
       border-radius: var(--r); overflow: hidden;
     }
     .feat-cell {
-      background: var(--bg2); padding: 32px 28px;
-      transition: background .2s;
+      background: var(--bg2); padding: 32px 28px; transition: background .2s;
     }
     .feat-cell:hover { background: var(--bg3); }
     .feat-emoji { font-size: 28px; margin-bottom: 14px; display: block; }
-    .feat-cell h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; letter-spacing: -.2px; }
+    .feat-cell h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
     .feat-cell p { font-size: 13px; color: var(--muted); line-height: 1.65; }
-    .pro-tag {
-      display: inline-block; background: var(--teal-dim);
+    .tag-pro {
+      display: inline-block; background: var(--teal-d);
       color: var(--teal-l); font-size: 9px; font-weight: 700;
       letter-spacing: .5px; text-transform: uppercase;
-      padding: 2px 7px; border-radius: 4px;
-      margin-left: 6px; vertical-align: middle;
+      padding: 2px 7px; border-radius: 4px; margin-left: 5px;
+      vertical-align: middle;
+    }
+    .tag-soon {
+      display: inline-block; background: rgba(251,191,36,0.1);
+      color: #FBB024; font-size: 9px; font-weight: 700;
+      letter-spacing: .5px; text-transform: uppercase;
+      padding: 2px 7px; border-radius: 4px; margin-left: 5px;
+      vertical-align: middle;
     }
 
-    /* ── COMPARISON ──────────────────────────── */
-    .compare-wrap { overflow-x: auto; }
+    /* COMPARISON */
+    .compare-wrap { overflow-x: auto; margin-bottom: 16px; }
     .compare-table {
       width: 100%; border-collapse: collapse;
       border: 1px solid var(--border);
-      border-radius: var(--r); overflow: hidden;
-      min-width: 600px;
+      border-radius: var(--r); overflow: hidden; min-width: 580px;
     }
     .compare-table th {
-      padding: 16px 22px; text-align: left;
+      padding: 15px 20px; text-align: left;
       font-size: 13px; font-weight: 600; color: var(--muted);
       background: var(--card); border-bottom: 1px solid var(--border);
     }
-    .compare-table th.hl { color: var(--teal-l); background: var(--teal-dim); }
+    .compare-table th.hl { color: var(--teal-l); background: var(--teal-d); }
     .compare-table td {
-      padding: 14px 22px; font-size: 14px;
+      padding: 13px 20px; font-size: 13px;
       border-bottom: 1px solid var(--border); color: var(--muted);
     }
     .compare-table td:first-child { color: var(--text); font-weight: 500; }
@@ -223,28 +206,27 @@
     .ck { color: var(--teal); font-weight: 700; }
     .cx { color: rgba(255,255,255,.18); }
     .cp { color: rgba(255,255,255,.4); }
-
-    /* ── PRICING ─────────────────────────────── */
-    .pricing-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 16px; margin-top: 52px;
+    .compare-note {
+      font-size: 12px; color: var(--dim); line-height: 1.6;
+      padding: 12px 0;
     }
+
+    /* PRICING */
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 52px; }
     .pc {
       background: var(--card); border: 1px solid var(--border);
       border-radius: var(--r); padding: 40px 36px;
     }
     .pc.featured {
-      border-color: var(--teal);
-      background: rgba(13,148,136,.06);
+      border-color: var(--teal); background: rgba(13,148,136,.06);
       position: relative;
     }
     .pc-badge {
-      position: absolute; top: -1px; left: 50%;
-      transform: translateX(-50%);
+      position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
       background: var(--teal); color: white;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: .5px; text-transform: uppercase;
-      padding: 4px 16px; border-radius: 0 0 9px 9px;
+      font-size: 11px; font-weight: 700; letter-spacing: .5px;
+      text-transform: uppercase; padding: 4px 16px;
+      border-radius: 0 0 9px 9px;
     }
     .pc-tier { font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
     .pc-price { font-size: 52px; font-weight: 800; letter-spacing: -2.5px; line-height: 1; margin-bottom: 6px; }
@@ -257,8 +239,7 @@
     }
     .pc-features li::before {
       content: '✓'; color: var(--teal);
-      font-weight: 700; font-size: 13px;
-      flex-shrink: 0; margin-top: 1px;
+      font-weight: 700; font-size: 13px; flex-shrink: 0; margin-top: 1px;
     }
     .pc-btn {
       display: block; text-align: center;
@@ -269,27 +250,38 @@
     .pc-btn-p:hover { background: var(--teal-l); }
     .pc-btn-s { background: transparent; color: var(--muted); border: 1px solid var(--border2); }
     .pc-btn-s:hover { color: var(--text); border-color: rgba(255,255,255,.28); }
-    .pricing-note { text-align: center; font-size: 13px; color: var(--dim); margin-top: 20px; }
+    .pricing-legal {
+      font-size: 12px; color: var(--dim); text-align: center;
+      margin-top: 20px; line-height: 1.7;
+    }
 
-    /* ── PRIVACY POLICY ──────────────────────── */
-    .privacy-inner { max-width: 700px; margin: 0 auto; }
-    .privacy-inner h2 { font-size: 38px; font-weight: 800; letter-spacing: -1.2px; margin-bottom: 6px; }
-    .updated { font-size: 13px; color: var(--dim); margin-bottom: 40px; }
-    .pp-highlight {
-      background: var(--teal-dim); border: 1px solid var(--teal-b);
+    /* PRIVACY POLICY */
+    .pp-inner { max-width: 700px; margin: 0 auto; }
+    .pp-inner h2 { font-size: 36px; font-weight: 800; letter-spacing: -1.2px; margin-bottom: 6px; }
+    .pp-updated { font-size: 13px; color: var(--dim); margin-bottom: 36px; }
+    .pp-box {
+      background: var(--teal-d); border: 1px solid var(--teal-b);
       border-radius: 13px; padding: 22px 26px; margin-bottom: 40px;
     }
-    .pp-highlight p { font-size: 15px; color: rgba(248,250,252,.78); line-height: 1.7; }
-    .privacy-inner h3 { font-size: 14px; font-weight: 700; color: var(--teal-l); margin: 36px 0 10px; text-transform: uppercase; letter-spacing: .5px; }
-    .privacy-inner p { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 10px; }
-    .privacy-inner ul { padding-left: 18px; }
-    .privacy-inner li { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 6px; }
-    .privacy-inner a { color: var(--teal-l); }
+    .pp-box p { font-size: 15px; color: rgba(248,250,252,.78); line-height: 1.7; }
+    .pp-inner h3 {
+      font-size: 13px; font-weight: 700; color: var(--teal-l);
+      margin: 36px 0 10px; text-transform: uppercase; letter-spacing: .5px;
+    }
+    .pp-inner p { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 10px; }
+    .pp-inner ul { padding-left: 18px; margin-bottom: 10px; }
+    .pp-inner li { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 6px; }
+    .pp-inner a { color: var(--teal-l); }
+    .pp-disclaimer {
+      background: rgba(255,255,255,0.02); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 24px; margin-top: 40px;
+    }
+    .pp-disclaimer p { font-size: 12px; color: var(--dim); line-height: 1.75; margin: 0; }
 
-    /* ── SUPPORT ─────────────────────────────── */
-    .support-inner { max-width: 700px; margin: 0 auto; }
-    .support-inner h2 { font-size: 38px; font-weight: 800; letter-spacing: -1.2px; margin-bottom: 8px; }
-    .support-inner > p { font-size: 16px; color: var(--muted); margin-bottom: 40px; }
+    /* SUPPORT */
+    .sp-inner { max-width: 700px; margin: 0 auto; }
+    .sp-inner h2 { font-size: 36px; font-weight: 800; letter-spacing: -1.2px; margin-bottom: 8px; }
+    .sp-inner > p { font-size: 16px; color: var(--muted); margin-bottom: 40px; }
     .contact-card {
       background: var(--card); border: 1px solid var(--border);
       border-radius: var(--r); padding: 28px 32px;
@@ -300,17 +292,37 @@
     .contact-card .cl p { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
     .contact-card .cl span { font-size: 13px; color: var(--muted); }
     .contact-card a { color: var(--teal-l); font-size: 15px; font-weight: 600; }
-    .faq-item { border-bottom: 1px solid var(--border); padding: 26px 0; }
-    .faq-item:last-child { border-bottom: none; }
-    .faq-item h3 { font-size: 15px; font-weight: 600; margin-bottom: 10px; }
-    .faq-item p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    .faq { border-bottom: 1px solid var(--border); padding: 26px 0; }
+    .faq:last-child { border-bottom: none; }
+    .faq h3 { font-size: 15px; font-weight: 600; margin-bottom: 10px; }
+    .faq p { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
-    /* ── FOOTER ──────────────────────────────── */
+    /* DISCLAIMER BAR */
+    .disclaimer-bar {
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid var(--border);
+      padding: 20px 40px;
+      text-align: center;
+    }
+    .disclaimer-bar p {
+      font-size: 12px; color: var(--dim); line-height: 1.7;
+      max-width: 800px; margin: 0 auto;
+    }
+
+    /* FOOTER */
     footer { border-top: 1px solid var(--border); padding: 44px 24px; }
-    .foot { max-width: 1040px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .foot {
+      max-width: 1040px; margin: 0 auto;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 20px;
+    }
     .foot-l { display: flex; flex-direction: column; gap: 6px; }
     .foot-brand { display: flex; align-items: center; gap: 8px; }
-    .foot-mark { width: 24px; height: 24px; background: var(--teal); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900; color: white; }
+    .foot-mark {
+      width: 24px; height: 24px; background: var(--teal);
+      border-radius: 6px; display: flex; align-items: center;
+      justify-content: center; font-size: 12px; font-weight: 900; color: white;
+    }
     .foot-name { font-size: 14px; font-weight: 700; }
     .foot-name span { color: var(--muted); font-weight: 400; }
     .foot-copy { font-size: 12px; color: var(--dim); }
@@ -318,21 +330,22 @@
     .foot-links a { font-size: 13px; color: var(--dim); transition: color .2s; }
     .foot-links a:hover { color: var(--text); }
 
-    /* ── RESPONSIVE ──────────────────────────── */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       nav { padding: 0 20px; }
       .nav-links a:not(.nav-cta) { display: none; }
       .diff-grid { grid-template-columns: 1fr; }
       .feat-grid { grid-template-columns: 1fr 1fr; }
       .pricing-grid { grid-template-columns: 1fr; }
-      .hero { padding: 70px 20px 70px; }
+      .hero { padding: 70px 20px; }
       .section { padding: 70px 20px; }
+      .contact-card { flex-direction: column; align-items: flex-start; }
+      .disclaimer-bar { padding: 20px; }
     }
     @media (max-width: 480px) {
       .feat-grid { grid-template-columns: 1fr; }
       .hero h1 { letter-spacing: -1.5px; }
       .pc-price { font-size: 40px; }
-      .contact-card { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -355,19 +368,19 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="eyebrow">Now on iPhone &amp; Apple Watch</div>
-  <h1>Budget smarter.<br/><em>Stay private.</em></h1>
-  <p class="hero-sub">TYM is the only free budgeting app that works without a bank account, an email address, or an internet connection. Your financial data lives on your device — and nowhere else.</p>
+  <div class="eyebrow">Available on iPhone &amp; Apple Watch</div>
+  <h1>Your money.<br/><em>Your device.</em><br/>Your rules.</h1>
+  <p class="hero-sub">A privacy-first budgeting app for iPhone. No bank account required. No email address. No account sign-up. All your financial data is stored on your device and nowhere else.</p>
   <div class="hero-ctas">
-    <a href="#" class="btn-dl">&#8595;&nbsp; Download on App Store</a>
-    <a href="#features" class="btn-ghost">Explore features &rarr;</a>
+    <a href="#" class="btn-dl">&#8595;&nbsp; Download on the App Store</a>
+    <a href="#features" class="btn-ghost">See all features &rarr;</a>
   </div>
   <div class="trust-strip">
     <span class="trust-badge">No account required</span>
     <span class="trust-badge">No bank sync</span>
-    <span class="trust-badge">100% on-device</span>
-    <span class="trust-badge">Free forever</span>
-    <span class="trust-badge">Apple Watch included</span>
+    <span class="trust-badge">On-device storage</span>
+    <span class="trust-badge">Free to start</span>
+    <span class="trust-badge">Apple Watch support</span>
   </div>
 </section>
 
@@ -375,24 +388,24 @@
 <section class="section">
   <div class="sh">
     <div class="sl">Why TYM</div>
-    <h2>Built different.<br/>On purpose.</h2>
-    <p>Every other budget app wants your bank login. TYM doesn't. Manual entry isn't a limitation — it's mindfulness.</p>
+    <h2>A different approach<br/>to budgeting.</h2>
+    <p>Most budget apps ask for your bank login on the first screen. TYM takes the opposite approach.</p>
   </div>
   <div class="diff-grid">
     <div class="diff-card">
       <div class="diff-icon">🔒</div>
-      <h3>Zero data collection</h3>
-      <p>Your transactions, budgets, and savings goals never leave your device. No servers. No accounts. No data mining. Teralabs LLC literally cannot see your financial data.</p>
+      <h3>Designed for privacy</h3>
+      <p>TYM is built so that your financial data never leaves your device. No external servers receive your transactions, budgets, or personal information. You stay in complete control of your data.</p>
     </div>
     <div class="diff-card">
       <div class="diff-icon">⚡</div>
-      <h3>Start in 10 seconds</h3>
-      <p>Download and open. No sign-up form. No email verification. No bank login screen. You're budgeting before other apps finish their onboarding flow.</p>
+      <h3>No sign-up required</h3>
+      <p>Download TYM and start budgeting immediately — no account, no email address, no bank connection. You can be up and running in under a minute, with no personal information required.</p>
     </div>
     <div class="diff-card">
       <div class="diff-icon">💸</div>
-      <h3>A fraction of the cost</h3>
-      <p>YNAB charges $109/yr. Monarch $99/yr. Copilot $95/yr. TYM Pro is $39.99/yr — and our free plan actually works, unlike theirs.</p>
+      <h3>Straightforward pricing</h3>
+      <p>TYM offers a genuinely useful free tier and a Pro plan at $4.99/month or $39.99/year — significantly less than many comparable apps. No surprise charges. Cancel anytime through Apple.</p>
     </div>
   </div>
 </section>
@@ -402,70 +415,83 @@
   <div class="inner">
     <div class="sh">
       <div class="sl">Features</div>
-      <h2>Everything you need.<br/>Nothing you don't.</h2>
-      <p>Built for people who want real control over their money — without handing it to an app.</p>
+      <h2>Built to track what<br/>matters to you.</h2>
+      <p>Focused tools for managing your money — without handing your financial life to a third party.</p>
     </div>
     <div class="feat-grid">
+
       <div class="feat-cell">
         <span class="feat-emoji">💰</span>
         <h3>Safe-to-spend</h3>
-        <p>Always know exactly how much you can spend today. Updates the moment you log a transaction.</p>
+        <p>See exactly how much you can spend today based on your budget and upcoming bills. Updates with every transaction you log.</p>
       </div>
+
       <div class="feat-cell">
         <span class="feat-emoji">📊</span>
         <h3>Smart insights</h3>
-        <p>Up to 6 AI-powered insight cards ranked by relevance to your real spending patterns right now.</p>
+        <p>Up to 6 insight cards that surface patterns in your spending — ranked by relevance to your current financial picture.</p>
       </div>
+
       <div class="feat-cell">
         <span class="feat-emoji">🎨</span>
-        <h3>12 themes + 10 fonts <span class="pro-tag">Pro</span></h3>
-        <p>The most customizable budget app on the App Store. Ocean, Emerald, Grape, Coral Red, Navy, Sage and more.</p>
+        <h3>12 themes + 10 fonts <span class="tag-pro">Pro</span></h3>
+        <p>Personalise TYM with 12 colour themes and 10 font styles. Ocean, Emerald, Grape, Coral Red, Navy, Sage and more.</p>
       </div>
+
       <div class="feat-cell">
         <span class="feat-emoji">⌚</span>
         <h3>Apple Watch</h3>
-        <p>Add expenses and check safe-to-spend right from your wrist. Included in every plan.</p>
+        <p>Log expenses and check your safe-to-spend balance from your wrist. Included on all plans.</p>
       </div>
+
       <div class="feat-cell">
         <span class="feat-emoji">📈</span>
-        <h3>Spending trends <span class="pro-tag">Pro</span></h3>
-        <p>6-month bar and line charts showing where your money actually goes. Filter by category.</p>
+        <h3>Spending trends <span class="tag-pro">Pro</span></h3>
+        <p>6-month bar and line charts showing your spending by category. See where your money actually goes over time.</p>
       </div>
+
       <div class="feat-cell">
         <span class="feat-emoji">🔮</span>
-        <h3>Cash flow forecast <span class="pro-tag">Pro</span></h3>
-        <p>See your projected balance 30 days out. Plan ahead before the money is gone.</p>
+        <h3>Cash flow forecast <span class="tag-pro">Pro</span> <span class="tag-soon">Soon</span></h3>
+        <p>A 30-day projected balance view to help you plan ahead. Coming in a future update.</p>
       </div>
+
       <div class="feat-cell">
         <span class="feat-emoji">🎯</span>
-        <h3>Savings goals <span class="pro-tag">Pro</span></h3>
-        <p>Set goals with target amounts and dates. Track progress with visual indicators that actually motivate.</p>
+        <h3>Savings goals <span class="tag-pro">Pro</span></h3>
+        <p>Set savings targets with amounts and dates. Track your progress toward each goal over time.</p>
       </div>
+
       <div class="feat-cell">
         <span class="feat-emoji">🔁</span>
-        <h3>Budget rollover <span class="pro-tag">Pro</span></h3>
-        <p>Unused budget carries forward automatically. Spend less this month, have more next month.</p>
+        <h3>Budget rollover <span class="tag-pro">Pro</span></h3>
+        <p>Unused budget from one month carries into the next automatically. Spend less now, have more later.</p>
       </div>
+
       <div class="feat-cell">
         <span class="feat-emoji">🔔</span>
         <h3>Bill reminders</h3>
-        <p>Never miss a payment. Set due dates and get reminded on-device. No server required.</p>
+        <p>Set due dates for bills and get reminded before they hit — all processed locally on your device. No server involved.</p>
       </div>
+
       <div class="feat-cell">
         <span class="feat-emoji">☁️</span>
-        <h3>iCloud sync <span class="pro-tag">Pro</span></h3>
-        <p>Pro users sync across unlimited Apple devices. Free plan includes single-device iCloud backup.</p>
+        <h3>iCloud sync <span class="tag-pro">Pro</span></h3>
+        <p>Pro users can sync across unlimited Apple devices via iCloud. Free plan includes single-device iCloud backup.</p>
       </div>
+
       <div class="feat-cell">
         <span class="feat-emoji">📤</span>
-        <h3>CSV &amp; PDF export <span class="pro-tag">Pro</span></h3>
-        <p>Export your full history as a clean CSV or a beautifully formatted PDF statement. Your data. Your way.</p>
+        <h3>CSV &amp; PDF export <span class="tag-pro">Pro</span></h3>
+        <p>Export your full transaction history as a CSV file or formatted PDF statement. Your data always remains portable.</p>
       </div>
+
       <div class="feat-cell">
         <span class="feat-emoji">🔐</span>
         <h3>Passcode &amp; Face ID</h3>
-        <p>Lock TYM with Face ID or your device passcode. Nobody sees your finances but you.</p>
+        <p>Secure TYM with your device passcode or Face ID. No one else can view your finances without your authentication.</p>
       </div>
+
     </div>
   </div>
 </section>
@@ -473,9 +499,9 @@
 <!-- COMPARISON -->
 <section class="section">
   <div class="sh">
-    <div class="sl">How we compare</div>
-    <h2>The honest comparison.</h2>
-    <p>We're not afraid to show this table. TYM wins where it counts.</p>
+    <div class="sl">How TYM compares</div>
+    <h2>A straightforward look<br/>at the options.</h2>
+    <p>See how TYM's approach differs from other popular budgeting apps.</p>
   </div>
   <div class="compare-wrap">
     <table class="compare-table">
@@ -490,18 +516,18 @@
       </thead>
       <tbody>
         <tr>
-          <td>Annual price</td>
+          <td>Annual price (approx.)</td>
           <td class="hl" style="color:#14B8A8;font-weight:700;">$39.99/yr</td>
-          <td>$109/yr</td>
-          <td>$99/yr</td>
-          <td>$95/yr</td>
+          <td>~$109/yr</td>
+          <td>~$99/yr</td>
+          <td>~$95/yr</td>
         </tr>
         <tr>
-          <td>Genuinely useful free plan</td>
+          <td>Usable free plan (no trial)</td>
           <td class="hl"><span class="ck">✓</span></td>
-          <td><span class="cx">✗ Trial only</span></td>
-          <td><span class="cx">✗ Trial only</span></td>
-          <td><span class="cx">✗ Trial only</span></td>
+          <td><span class="cx">Trial only</span></td>
+          <td><span class="cx">Trial only</span></td>
+          <td><span class="cx">Trial only</span></td>
         </tr>
         <tr>
           <td>No account or email required</td>
@@ -518,7 +544,7 @@
           <td><span class="cx">✗</span></td>
         </tr>
         <tr>
-          <td>100% on-device data</td>
+          <td>On-device data storage</td>
           <td class="hl"><span class="ck">✓</span></td>
           <td><span class="cx">✗</span></td>
           <td><span class="cx">✗</span></td>
@@ -533,21 +559,17 @@
         </tr>
         <tr>
           <td>Apple Watch support</td>
-          <td class="hl"><span class="ck">✓ All plans</span></td>
-          <td><span class="ck">✓</span></td>
-          <td><span class="cx">✗</span></td>
-          <td><span class="ck">✓</span></td>
-        </tr>
-        <tr>
-          <td>No ads. Ever.</td>
           <td class="hl"><span class="ck">✓</span></td>
           <td><span class="ck">✓</span></td>
-          <td><span class="ck">✓</span></td>
+          <td><span class="cx">✗</span></td>
           <td><span class="ck">✓</span></td>
         </tr>
       </tbody>
     </table>
   </div>
+  <p class="compare-note">
+    Competitor pricing and features are based on publicly available information as of April 2026 and are subject to change without notice. Teralabs LLC makes no representations regarding the accuracy of third-party product details. Please verify current information on each provider's official website before making a purchasing decision.
+  </p>
 </section>
 
 <!-- PRICING -->
@@ -555,160 +577,203 @@
   <div class="inner">
     <div class="sh">
       <div class="sl">Pricing</div>
-      <h2>Simple. Honest. Fair.</h2>
-      <p>Start free forever. Upgrade when you're ready. No questions asked when you cancel.</p>
+      <h2>Transparent pricing.<br/>No surprises.</h2>
+      <p>TYM offers a free plan with real functionality and an optional Pro upgrade. All billing is managed through Apple.</p>
     </div>
     <div class="pricing-grid">
 
       <div class="pc">
         <div class="pc-tier">Free</div>
-        <div class="pc-price">$0<span> forever</span></div>
-        <p class="pc-alt">No credit card. No account. Just download.</p>
+        <div class="pc-price">$0</div>
+        <p class="pc-alt">No credit card. No account. Download and start.</p>
         <ul class="pc-features">
-          <li>Unlimited transactions</li>
-          <li>10 categories &amp; 3 budgets</li>
+          <li>Unlimited transaction logging</li>
+          <li>Up to 10 categories &amp; 3 budgets</li>
           <li>90-day transaction history</li>
           <li>Safe-to-spend &amp; daily allowance</li>
-          <li>Bill reminders</li>
+          <li>Bill reminders (on-device)</li>
+          <li>Up to 5 recurring transactions</li>
           <li>2 smart insight cards</li>
-          <li>3 themes &amp; 3 fonts</li>
-          <li>Apple Watch (view &amp; add expenses)</li>
-          <li>iCloud backup (1 device)</li>
-          <li>Read-only home widget</li>
-          <li>Passcode &amp; Face ID</li>
+          <li>3 colour themes &amp; 3 fonts</li>
+          <li>Apple Watch (view &amp; log expenses)</li>
+          <li>iCloud backup (single device)</li>
+          <li>Read-only home screen widget</li>
+          <li>Passcode &amp; Face ID lock</li>
         </ul>
         <a href="#" class="pc-btn pc-btn-s">Download Free</a>
       </div>
 
       <div class="pc featured">
-        <div class="pc-badge">Best Value</div>
+        <div class="pc-badge">Pro</div>
         <div class="pc-tier">Pro</div>
         <div class="pc-price">$4.99<span>/mo</span></div>
-        <p class="pc-alt">or $39.99/yr &mdash; save 33%&nbsp;&nbsp;·&nbsp;&nbsp;Less than a coffee a month</p>
+        <p class="pc-alt">or $39.99/yr — approximately $3.33/month</p>
         <ul class="pc-features">
-          <li>Everything in Free</li>
+          <li>Everything included in Free</li>
           <li>Unlimited categories &amp; budgets</li>
-          <li>Full unlimited transaction history</li>
-          <li>All 12 themes + all 10 fonts</li>
+          <li>Complete transaction history</li>
+          <li>All 12 colour themes &amp; 10 fonts</li>
           <li>Full 6 smart insight cards</li>
           <li>6-month spending trends &amp; charts</li>
-          <li>30-day cash flow forecast</li>
           <li>Unlimited savings goals</li>
-          <li>Budget rollover</li>
-          <li>50/30/20 budgeting formula</li>
-          <li>No-spend streak counter</li>
+          <li>Budget rollover month-to-month</li>
           <li>CSV &amp; PDF export</li>
-          <li>CSV import</li>
-          <li>iCloud sync — unlimited devices</li>
-          <li>Quick-add home screen widget</li>
+          <li>iCloud sync across unlimited devices</li>
+          <li>Apple Watch full feature access</li>
           <li>Siri shortcuts</li>
-          <li>Apple Watch full features</li>
+          <li>Cash flow forecast <span class="tag-soon">Coming soon</span></li>
+          <li>50/30/20 budgeting formula <span class="tag-soon">Coming soon</span></li>
+          <li>No-spend streak tracking <span class="tag-soon">Coming soon</span></li>
+          <li>CSV import <span class="tag-soon">Coming soon</span></li>
+          <li>Quick-add home screen widget <span class="tag-soon">Coming soon</span></li>
         </ul>
-        <a href="#" class="pc-btn pc-btn-p">Start Pro — $4.99/mo</a>
+        <a href="#" class="pc-btn pc-btn-p">Get TYM Pro</a>
       </div>
 
     </div>
-    <p class="pricing-note">Subscriptions managed through your Apple ID. Cancel anytime in iPhone Settings.</p>
+    <div class="pricing-legal">
+      <p>
+        Subscriptions are processed and managed through Apple and your Apple ID. Teralabs LLC does not handle payment information directly. Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current billing period. To cancel, go to iPhone Settings → your name → Subscriptions → TYM Pro. Prices shown in USD and may vary by region. Features marked "Coming soon" are planned for future updates and are not guaranteed to ship by a specific date.
+      </p>
+    </div>
   </div>
 </section>
 
 <!-- PRIVACY POLICY -->
 <section class="section" id="privacy">
-  <div class="privacy-inner">
-    <div class="sl">TYM — Track Your Money</div>
+  <div class="pp-inner">
+    <div class="sl">Teralabs LLC</div>
     <h2>Privacy Policy</h2>
-    <p class="updated">Last updated: April 2026</p>
+    <p class="pp-updated">Effective date: April 6, 2026 &nbsp;·&nbsp; Last reviewed: April 2026</p>
 
-    <div class="pp-highlight">
-      <p><strong>The short version:</strong> TYM collects nothing. Your transactions, budgets, and savings goals are stored only on your iPhone using Apple's on-device database. Teralabs LLC has no servers that hold your data and no ability to see your financial information — ever.</p>
+    <div class="pp-box">
+      <p><strong>Summary:</strong> TYM is designed so that your financial data is stored only on your device. Teralabs LLC does not operate servers that receive, store, or process your personal or financial information. This policy explains exactly what data is involved, what isn't, and how Apple's services interact with TYM.</p>
     </div>
 
-    <h3>What we collect</h3>
-    <p>Nothing. TYM does not collect personal information, financial data, usage analytics, crash reports, or behavioral data. We have no ability to see anything you enter into TYM.</p>
+    <h3>1. Who we are</h3>
+    <p>Teralabs LLC is the developer of TYM — Track Your Money, available on the Apple App Store. References to "we," "us," or "Teralabs LLC" in this policy refer to Teralabs LLC as the developer and publisher of TYM.</p>
 
-    <h3>Data storage</h3>
-    <p>All data you enter into TYM — transactions, budgets, categories, savings goals, payment methods, and settings — is stored exclusively on your device using Apple's SwiftData framework. It never leaves your phone unless you explicitly choose to export it yourself.</p>
+    <h3>2. Data we do not collect</h3>
+    <p>By design, TYM does not collect, transmit, or store any of the following through Teralabs LLC-operated infrastructure:</p>
+    <ul>
+      <li>Your name, email address, phone number, or any personally identifying information</li>
+      <li>Your financial transactions, budget amounts, or savings data</li>
+      <li>Your device location</li>
+      <li>Behavioural analytics or usage patterns</li>
+      <li>Crash reports or diagnostic data</li>
+      <li>Advertising identifiers</li>
+    </ul>
+    <p>We do not operate any server, database, or backend service that receives data from TYM users.</p>
 
-    <h3>iCloud Sync (Pro feature)</h3>
-    <p>TYM Pro users may enable iCloud sync. When enabled, your data is synced through your personal Apple iCloud account, governed entirely by <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>. Teralabs LLC has zero access to your iCloud data at any point. You can disable iCloud sync at any time in iPhone Settings → your name → iCloud.</p>
+    <h3>3. Data stored on your device</h3>
+    <p>All information you enter into TYM — including transactions, categories, budgets, payment methods, savings goals, and app settings — is stored locally on your device using Apple's SwiftData framework. This data does not leave your device unless you explicitly choose to export it or enable iCloud sync as described below.</p>
 
-    <h3>No account required</h3>
-    <p>TYM does not ask for your name, email, phone number, or any identifying information. You are completely anonymous to us. We do not even know you downloaded the app.</p>
+    <h3>4. Apple App Store analytics</h3>
+    <p>Apple may provide Teralabs LLC with aggregate, anonymized download and crash statistics through App Store Connect. This data does not include any personally identifiable information and does not reveal who has downloaded or used TYM. This data is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</p>
 
-    <h3>No bank connection</h3>
-    <p>TYM does not connect to banks, financial institutions, or third-party financial data services. We have no access to banking credentials, account numbers, or transaction history from your bank. All transactions in TYM are entered manually by you.</p>
+    <h3>5. iCloud sync (optional, Pro feature)</h3>
+    <p>TYM Pro users may optionally enable iCloud sync. When enabled, your TYM data is synchronized through your personal Apple iCloud account. This sync occurs between your devices via Apple's infrastructure. Teralabs LLC has no access to data stored in or transmitted through iCloud. iCloud sync is governed by Apple's iCloud Terms and Privacy Policy. You may disable iCloud sync at any time through iPhone Settings → your name → iCloud → TYM.</p>
 
-    <h3>In-app purchases &amp; subscriptions</h3>
-    <p>TYM Pro subscriptions are processed entirely by Apple through the App Store. Teralabs LLC does not handle, process, or store any payment information. All billing is managed through your Apple ID.</p>
+    <h3>6. No account or registration</h3>
+    <p>TYM does not require or offer user account creation. No registration, login, or personal information is required to use the app. You are not identifiable to Teralabs LLC through your use of TYM.</p>
 
-    <h3>Notifications</h3>
-    <p>Bill reminders and spending alerts are generated locally on your device using Apple's UserNotifications framework. Teralabs LLC does not operate push notification servers. No data leaves your device to deliver a notification.</p>
+    <h3>7. No bank or financial institution connection</h3>
+    <p>TYM does not connect to, interface with, or retrieve data from any bank, financial institution, or third-party financial data provider. All transactions are entered manually by you. Teralabs LLC has no access to your banking credentials, account numbers, or bank transaction history.</p>
 
-    <h3>Analytics &amp; tracking</h3>
-    <p>TYM contains no analytics SDKs, advertising networks, tracking pixels, or third-party monitoring services. There is no Google Analytics, Firebase, Facebook SDK, or equivalent in TYM's codebase.</p>
+    <h3>8. In-app purchases and subscriptions</h3>
+    <p>TYM offers optional auto-renewable subscriptions (TYM Pro) through the Apple App Store. All payment processing is handled entirely by Apple. Teralabs LLC does not receive, process, store, or have access to your payment card details, billing address, or any payment information. All subscription management is performed through your Apple ID.</p>
 
-    <h3>Children's privacy</h3>
-    <p>TYM does not collect information from any user, including children under 13. Because we collect nothing, there is no children's data to protect — but we are committed to this standard regardless.</p>
+    <h3>9. Notifications</h3>
+    <p>Bill reminders and spending alerts are generated and delivered locally on your device using Apple's UserNotifications framework. These notifications are scheduled on-device and do not involve any external server communication. Teralabs LLC does not use remote push notification services for TYM's bill or budget alerts.</p>
 
-    <h3>Changes to this policy</h3>
-    <p>If we update this policy, we will change the date at the top of this page. Material changes will be noted in the app's App Store release notes. Continued use of TYM after changes constitutes acceptance of the updated policy.</p>
+    <h3>10. Third-party SDKs and services</h3>
+    <p>TYM does not incorporate any third-party analytics, advertising, tracking, or data collection SDKs. There is no integration with services such as Google Analytics, Firebase, Facebook SDK, or equivalent data collection tools in TYM's codebase.</p>
 
-    <h3>Contact</h3>
-    <p>Questions about this privacy policy? Contact us at <a href="mailto:privacy@teralabsllc.com">privacy@teralabsllc.com</a></p>
+    <h3>11. Children's privacy</h3>
+    <p>TYM is not directed at children under the age of 13. Because TYM does not collect personal information from any users, it does not collect personal information from children. If you believe a child under 13 has entered personal information into TYM in a way we have not anticipated, please contact us and we will investigate.</p>
+
+    <h3>12. Your data rights</h3>
+    <p>Because Teralabs LLC does not hold your personal data, we are unable to retrieve, modify, or delete data on your behalf that is stored on your device. You may delete all TYM data at any time by removing the app from your device. If you have enabled iCloud sync, you may delete synced data through your iCloud account settings. For questions about data Apple holds on your behalf, please contact Apple directly.</p>
+
+    <h3>13. Data security</h3>
+    <p>TYM relies on Apple's device security model, including device encryption, to protect locally stored data. Teralabs LLC does not independently operate servers that could be compromised to expose TYM user data. However, no technology can guarantee absolute security, and Teralabs LLC makes no warranty regarding the security of Apple's infrastructure or your personal device.</p>
+
+    <h3>14. Changes to this policy</h3>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last reviewed" date at the top of this page. If changes are material, we will note them in TYM's App Store release notes. Continued use of TYM after updates to this policy constitutes your acceptance of the revised terms.</p>
+
+    <h3>15. Contact</h3>
+    <p>If you have questions about this Privacy Policy, please contact us at <a href="mailto:privacy@teralabsllc.com">privacy@teralabsllc.com</a>. We aim to respond to all privacy-related inquiries within 5 business days.</p>
+
+    <h3>16. Governing law</h3>
+    <p>This Privacy Policy is governed by the laws applicable to Teralabs LLC in the jurisdiction in which it is registered. To the extent permitted by applicable law, any disputes arising under this policy shall be resolved in accordance with those governing laws.</p>
+
+    <div class="pp-disclaimer">
+      <p><strong>Disclaimer:</strong> TYM is a personal finance management tool intended for informational and organisational purposes only. TYM is not a financial adviser, financial planner, or licensed financial service. Information displayed in TYM reflects data you enter and should not be relied upon as financial, investment, tax, or legal advice. Teralabs LLC is not responsible for financial decisions made based on information displayed in TYM.</p>
+    </div>
   </div>
 </section>
 
 <!-- SUPPORT -->
 <section class="section-alt" id="support">
-  <div class="support-inner">
-    <div class="sl">TYM — Track Your Money</div>
-    <h2>Support</h2>
-    <p>Questions, bugs, or feedback — we read everything and respond within 24 hours.</p>
+  <div class="sp-inner">
+    <div class="sl">Support</div>
+    <h2>Here to help.</h2>
+    <p>Questions, issues, or feedback about TYM — send us a message and we'll get back to you.</p>
 
     <div class="contact-card">
       <div class="cl">
         <p>Email support</p>
-        <span>Response within 24 hours on business days</span>
+        <span>We aim to respond within 1–2 business days. Response times may vary during holidays.</span>
       </div>
       <a href="mailto:support@teralabsllc.com">support@teralabsllc.com</a>
     </div>
 
-    <div class="faq-item">
-      <h3>How do I restore my Pro subscription after reinstalling?</h3>
-      <p>Open TYM → Settings tab → tap the "Upgrade to Pro" card at the top → scroll to the bottom of the paywall screen → tap "Restore Purchases." Your subscription will restore automatically as long as you're signed into the same Apple ID that made the original purchase.</p>
+    <div class="faq">
+      <h3>How do I restore my Pro subscription after reinstalling TYM?</h3>
+      <p>Open TYM → Settings tab → tap the "Upgrade to Pro" card → scroll to the bottom → tap "Restore Purchases." Make sure you are signed into the same Apple ID used for the original purchase. If the issue persists, contact Apple Support as they manage all billing.</p>
     </div>
 
-    <div class="faq-item">
-      <h3>Will I lose my data if I delete the app?</h3>
-      <p>If iCloud sync is disabled and you delete TYM, your data will be lost. We strongly recommend enabling iCloud Backup on your iPhone (iPhone Settings → your name → iCloud → iCloud Backup). Pro users with iCloud sync enabled can restore all data by reinstalling TYM and signing in to the same iCloud account.</p>
+    <div class="faq">
+      <h3>Will I lose my data if I delete TYM?</h3>
+      <p>If you have not enabled iCloud sync, deleting TYM will remove your locally stored data permanently. We recommend enabling iCloud Backup on your iPhone (Settings → your name → iCloud → iCloud Backup) as a precaution. Pro users with iCloud sync active can restore data by reinstalling TYM on the same Apple ID.</p>
     </div>
 
-    <div class="faq-item">
-      <h3>How do I cancel my Pro subscription?</h3>
-      <p>Go to iPhone Settings → tap your name at the top → Subscriptions → find TYM Pro → tap Cancel Subscription. You'll keep Pro access until the end of your current billing period. Per Apple's policy, partial-period refunds are not available from Teralabs LLC directly — please contact Apple Support for refund requests.</p>
+    <div class="faq">
+      <h3>How do I cancel my TYM Pro subscription?</h3>
+      <p>Go to iPhone Settings → tap your name → Subscriptions → TYM Pro → Cancel Subscription. You retain Pro access until the end of the current billing period. Teralabs LLC does not handle refunds directly — for billing inquiries please contact Apple Support.</p>
     </div>
 
-    <div class="faq-item">
-      <h3>My transactions aren't showing up. What do I do?</h3>
-      <p>Check the date filter at the top of the Transactions tab — it may be set to a period that doesn't include recent entries. If the issue persists after adjusting the filter, email us with your iPhone model and iOS version and we'll resolve it quickly.</p>
+    <div class="faq">
+      <h3>My transactions aren't appearing. What should I check?</h3>
+      <p>Check the date filter at the top of the Transactions tab — it may be set to a period that excludes recent entries. If the issue continues, email us with your iPhone model and iOS version and we will investigate.</p>
     </div>
 
-    <div class="faq-item">
-      <h3>Can I import transactions from another budgeting app?</h3>
-      <p>TYM Pro includes CSV import — you can import data exported from most other budget apps or downloaded from your bank's website. Free users can add transactions manually. Most banks allow you to download a CSV of your statement from their website.</p>
+    <div class="faq">
+      <h3>Can I move my data from another budgeting app to TYM?</h3>
+      <p>CSV import is planned for a future Pro update (marked "Coming soon" in the pricing section). Until then, transactions can be entered manually. Most banks allow you to download a statement from their website if you need a reference.</p>
     </div>
 
-    <div class="faq-item">
+    <div class="faq">
       <h3>Does TYM work on iPad?</h3>
-      <p>Yes — TYM runs natively on both iPhone and iPad. The iPad version uses a sidebar navigation layout optimized for larger screens.</p>
+      <p>Yes. TYM is designed for both iPhone and iPad. The iPad version uses a sidebar layout to make better use of the larger screen.</p>
     </div>
 
-    <div class="faq-item">
-      <h3>I have feedback or a feature request. How do I share it?</h3>
-      <p>Email us at <a href="mailto:support@teralabsllc.com" style="color:var(--teal-l);">support@teralabsllc.com</a> — we read every message. Feature requests from real users directly shape our roadmap.</p>
+    <div class="faq">
+      <h3>I have a feature request or feedback. How do I share it?</h3>
+      <p>Email <a href="mailto:support@teralabsllc.com" style="color:var(--teal-l);">support@teralabsllc.com</a> — we read every message. User feedback informs how we prioritise future development.</p>
     </div>
+
   </div>
 </section>
+
+<!-- DISCLAIMER BAR -->
+<div class="disclaimer-bar">
+  <p>
+    TYM is not a financial adviser and does not provide financial, investment, tax, or legal advice. App content is for personal organisational purposes only. All financial decisions are your sole responsibility. &nbsp;·&nbsp;
+    Apple, iPhone, iPad, Apple Watch, iCloud, Face ID, and the App Store are trademarks of Apple Inc., registered in the U.S. and other countries. Teralabs LLC is an independent developer and is not affiliated with or endorsed by Apple Inc. &nbsp;·&nbsp;
+    Competitor names and pricing referenced on this page are trademarks of their respective owners. All third-party information is approximate, based on publicly available data as of April 2026, and subject to change.
+  </p>
+</div>
 
 <!-- FOOTER -->
 <footer>
