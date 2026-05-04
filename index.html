@@ -52,15 +52,15 @@ nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between
 .company-card .cc-icon{font-size:28px;margin-bottom:18px;display:block}
 .company-card h3{font-size:17px;font-weight:700;margin-bottom:10px;letter-spacing:-0.3px}
 .company-card p{font-size:14px;color:var(--muted);line-height:1.75}
-.product-hero{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:48px 44px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:48px}
+.product-hero{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:48px 44px;display:flex;flex-direction:column;gap:40px;align-items:center;margin-top:48px}
+.product-info{text-align:center;max-width:600px}
 .product-info h3{font-size:32px;font-weight:800;letter-spacing:-1.2px;margin-bottom:8px}
 .product-info .tagline{color:var(--teal-l);font-size:14px;font-weight:600;margin-bottom:18px}
 .product-info p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:24px}
-.feat-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.feat-list{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px}
 .feat-list li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted)}
 .feat-list li::before{content:'✓';color:var(--teal);font-weight:700;font-size:13px}
-.screenshot-gallery{display:flex;gap:24px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:20px 0;scrollbar-width:none}
-.screenshot-gallery::-webkit-scrollbar{display:none}
+.screenshot-gallery{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;padding:20px 0}
 .screenshot-frame{flex-shrink:0;width:210px;background:#1a1a1a;border-radius:36px;border:3px solid #333;padding:10px 10px 14px;position:relative;overflow:hidden;transition:transform .3s;box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(255,255,255,0.05) inset}
 .screenshot-frame:hover{transform:scale(1.03)}
 .screenshot-frame::before{content:'';position:absolute;top:10px;left:50%;transform:translateX(-50%);width:60px;height:18px;background:#1a1a1a;border-radius:0 0 12px 12px;z-index:2}
@@ -134,7 +134,7 @@ footer{border-top:1px solid var(--border);padding:44px 24px}
 .foot-links{display:flex;gap:24px;flex-wrap:wrap}
 .foot-links a{font-size:13px;color:var(--dim);transition:color .2s;font-weight:500}
 .foot-links a:hover{color:var(--text)}
-@media(max-width:768px){nav{padding:0 16px}.nav-links a:not(.nav-cta){display:none}.hero{padding:80px 20px 60px}.section,.section-alt{padding:70px 20px}.company-grid{grid-template-columns:1fr}.product-hero{grid-template-columns:1fr;padding:24px}.feat-grid{grid-template-columns:1fr 1fr}.pricing-grid{grid-template-columns:1fr}.contact-card{flex-direction:column;align-items:flex-start;gap:12px}.disclaimer-bar{padding:16px}.screenshot-frame{width:160px}}
+@media(max-width:768px){nav{padding:0 16px}.nav-links a:not(.nav-cta){display:none}.hero{padding:80px 20px 60px}.section,.section-alt{padding:70px 20px}.company-grid{grid-template-columns:1fr}.product-hero{padding:24px}.feat-list{flex-direction:column;align-items:flex-start}.feat-grid{grid-template-columns:1fr 1fr}.pricing-grid{grid-template-columns:1fr}.contact-card{flex-direction:column;align-items:flex-start;gap:12px}.disclaimer-bar{padding:16px}.screenshot-frame{width:160px}}
 @media(max-width:480px){.feat-grid{grid-template-columns:1fr}.hero h1{letter-spacing:-1.5px}.screenshot-frame{width:140px}}
 </style>
 </head>
@@ -185,7 +185,7 @@ footer{border-top:1px solid var(--border);padding:44px 24px}
           <li>Built with SwiftUI and the latest iOS design</li>
         </ul>
       </div>
-      <div style="display:flex;flex-direction:column;align-items:center">
+      <div style="text-align:center;width:100%">
         <div class="screenshot-gallery">
           <div class="screenshot-frame"><img src="screenshot-home.png" alt="TYM Home screen showing safe-to-spend and budget overview" loading="lazy"><div class="screenshot-label">Home</div></div>
           <div class="screenshot-frame"><img src="screenshot-transactions.png" alt="TYM Transactions screen with search and filters" loading="lazy"><div class="screenshot-label">Transactions</div></div>
