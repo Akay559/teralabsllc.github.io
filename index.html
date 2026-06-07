@@ -94,11 +94,9 @@ nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between
 .feat-list li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted)}
 .feat-list li::before{content:'✓';color:var(--teal);font-weight:700;font-size:13px}
 .screenshot-gallery{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;padding:20px 0}
-.screenshot-frame{flex-shrink:0;width:210px;background:#1a1a1a;border-radius:36px;border:3px solid #333;padding:10px 10px 14px;position:relative;overflow:hidden;transition:transform .3s;box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(255,255,255,0.05) inset}
-.screenshot-frame:hover{transform:scale(1.03)}
-.screenshot-frame::before{content:'';position:absolute;top:10px;left:50%;transform:translateX(-50%);width:60px;height:18px;background:#1a1a1a;border-radius:0 0 12px 12px;z-index:2}
-.screenshot-frame::after{content:'';position:absolute;bottom:10px;left:50%;transform:translateX(-50%);width:40px;height:4px;background:rgba(255,255,255,0.15);border-radius:4px;z-index:2}
-.screenshot-frame img{width:100%;border-radius:26px;display:block}
+.screenshot-frame{flex-shrink:0;width:232px;position:relative;transition:transform .3s;filter:drop-shadow(0 26px 55px rgba(0,0,0,0.55))}
+.screenshot-frame:hover{transform:translateY(-4px) scale(1.02)}
+.screenshot-frame img{width:100%;display:block}
 .screenshot-label{text-align:center;margin-top:14px;font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.5px;text-transform:uppercase;font-family:var(--font-head)}
 .app-badge{margin-top:24px;display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--teal-l);font-weight:600}
 .app-badge::before{content:'';width:6px;height:6px;background:var(--teal-l);border-radius:50%;animation:glow 2s ease-in-out infinite}
@@ -244,10 +242,10 @@ footer{border-top:1px solid var(--border);padding:44px 24px}
       </div>
       <div style="text-align:center;width:100%">
         <div class="screenshot-gallery">
-          <div class="screenshot-frame"><img src="screenshot-home.png" alt="TYM Home screen showing safe-to-spend and budget overview" loading="lazy"><div class="screenshot-label">Home</div></div>
-          <div class="screenshot-frame"><img src="screenshot-transactions.png" alt="TYM Transactions screen with search and filters" loading="lazy"><div class="screenshot-label">Transactions</div></div>
-          <div class="screenshot-frame"><img src="screenshot-budgets.png" alt="TYM Budgets screen with category progress bars" loading="lazy"><div class="screenshot-label">Budgets</div></div>
-          <div class="screenshot-frame"><img src="screenshot-settings.png" alt="TYM Settings screen with theme and font customization" loading="lazy"><div class="screenshot-label">Settings</div></div>
+          <div class="screenshot-frame"><img src="screenshot-home.png?v=2" alt="TYM Home screen showing safe-to-spend, balance, net worth and the 50/30/10/10 budget rule" loading="lazy"><div class="screenshot-label">Home</div></div>
+          <div class="screenshot-frame"><img src="screenshot-transactions.png?v=2" alt="TYM Transactions screen with monthly spent, income, transfers and a searchable list" loading="lazy"><div class="screenshot-label">Transactions</div></div>
+          <div class="screenshot-frame"><img src="screenshot-budgets.png?v=2" alt="TYM Budgets screen with budgeted-category progress and a budget rollover toggle" loading="lazy"><div class="screenshot-label">Budgets</div></div>
+          <div class="screenshot-frame"><img src="screenshot-settings.png?v=2" alt="TYM Settings screen with color theme, font style, currency and accounts options" loading="lazy"><div class="screenshot-label">Settings</div></div>
         </div>
         <div class="app-badge">Coming soon to the App Store</div>
       </div>
