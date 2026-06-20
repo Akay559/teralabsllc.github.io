@@ -66,6 +66,8 @@ nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between
 .hero h1 em{font-style:normal;color:var(--teal-l)}
 .hero-sub{font-size:clamp(15px,1.8vw,18px);color:var(--muted);max-width:540px;margin:0 auto 18px;line-height:1.75}
 .hero-tagline{font-size:15px;color:var(--teal-l);font-weight:500;margin-bottom:48px;letter-spacing:-0.2px;font-style:italic}
+.dl-btn{display:inline-flex;align-items:center;gap:9px;background:var(--teal);color:#fff;padding:14px 30px;border-radius:12px;font-family:var(--font-head);font-weight:700;font-size:15px;letter-spacing:-0.2px;transition:background .2s,transform .2s;box-shadow:0 12px 34px rgba(13,148,136,.32)}
+.dl-btn:hover{background:var(--teal-l);transform:translateY(-2px)}
 
 /* --- Sections --- */
 .section{max-width:1040px;margin:0 auto;padding:100px 24px}
@@ -209,6 +211,7 @@ footer{border-top:1px solid var(--border);padding:44px 24px}
   <h1 class="fade-in d1">Know where your<br>money is <em>going.</em></h1>
   <p class="hero-sub fade-in d2">TYM is a fully on-device budgeting app for iPhone, iPad, and Apple Watch. No bank sync. No cloud servers. No account required. Your finances stay on your device — always.</p>
   <p class="hero-tagline fade-in d3">Most budget apps show where your money went. TYM shows where it's going.</p>
+  <a href="https://apps.apple.com/us/app/tym-track-your-money/id6764190754" class="dl-btn fade-in d4" target="_blank" rel="noopener" aria-label="Download TYM on the App Store">Download on the App Store →</a>
 </section>
 <section class="section" id="about">
   <div class="sh"><div class="sl">About Tera Labs LLC</div><h2>Privacy is not a feature.<br>It's the foundation.</h2><p>We design our apps to work entirely on-device, with no cloud dependency, no tracking, and no third-party analytics.</p></div>
@@ -250,7 +253,7 @@ footer{border-top:1px solid var(--border);padding:44px 24px}
           <div class="screenshot-frame"><img src="screenshot-savings.png?v=2" alt="TYM Savings Goals screen with total savings progress and active goals" loading="lazy"><div class="screenshot-label">Savings</div></div>
           <div class="screenshot-frame"><img src="screenshot-settings.png?v=2" alt="TYM Settings screen with color theme, font style, currency and accounts options" loading="lazy"><div class="screenshot-label">Settings</div></div>
         </div>
-        <div class="app-badge">Available on the App Store</div>
+        <a href="https://apps.apple.com/us/app/tym-track-your-money/id6764190754" class="app-badge" target="_blank" rel="noopener">Available on the App Store</a>
       </div>
     </div>
   </div>
